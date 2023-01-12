@@ -40,11 +40,16 @@ const name:string="meinName";
 let params:IProps = {name:"chris", nr:44};
 */
 
-let testString:IString = {text: "chris",text2:"gg"};
+//let testString:IString = {text: "chris",text2:"gg"};
+
+
 
 function App() {
 
   // state hook 
+
+  const [testString, setTestString] = 
+useState<IString>({text: "chris",text2:"gg"})
   
   const [reminders, setReminders] = 
     useState<Reminder[]>([
@@ -91,6 +96,10 @@ function App() {
     alert("plane gelöscht");
   }
 
+  const changeText = () => {
+      setTestString({text: "franz",text2:"lola"});
+  }
+
   return (
     
     <div className="App">
@@ -98,9 +107,9 @@ function App() {
       <p>Ausgabe von Variablen der APP Komponente z.B. Zahl: {zahl} </p>
       <p>Ausgabe von Objekten der APP Komponente z.B. Reminder: {remindersStatic[0].title} </p>
 
-      <TestEinfacheDatentypen name={name} nr={zahl}></TestEinfacheDatentypen>
+      <TestEinfacheDatentypen name={name} nr={zahl} ></TestEinfacheDatentypen>
       
-      <TestComponent text={testString.text} text2={testString.text2}></TestComponent>
+      <TestComponent text={testString.text} text2={testString.text2} ></TestComponent>
       
       <button className="btn btn-primary" onClick={lokalFunki}>Click me (App)</button>
 

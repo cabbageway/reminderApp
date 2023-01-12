@@ -14,6 +14,7 @@ export interface ReminderListProps {
 export interface IString {
     text: string,
     text2:string
+    
 }
 
 export interface PlaneObject {
@@ -25,4 +26,8 @@ export interface PlaneObject {
 export interface PlaneList {
     planes:PlaneObject[];
     onRemovePlanes: (id:number) => void;
+}
+
+export interface TestFunktions {
+    onChangeText: () => void; 
 }

@@ -1,11 +1,12 @@
 import React from 'react';
+import { TestFunktions } from '../models/Reminder';
 interface IString {
     text: string,
     text2:string
 }
 // zwei Schreibweisen
 //function TestComponent({text}:IString, {text2}:IString) {
-function TestComponent({text, text2}:IString) {
+function TestComponent({text, text2, }:IString, {onChangeText}:TestFunktions) {
     return (
         <div>
             <hr />
@@ -19,6 +20,9 @@ function TestComponent({text, text2}:IString) {
                 alert("hi");
             }}>simpleJS</button>
              <button id="btn" className='btn btn-danger m-2' onClick={funki}>JS in der Komponent definiert</button>
+             <button id="btn" className='btn btn-danger m-2' onClick={onChangeText}>in APP definiert</button>
+            
+            
             <hr />
 
         </div>
