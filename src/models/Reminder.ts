@@ -24,4 +24,5 @@ export interface PlaneObject {
 
 export interface PlaneList {
     planes:PlaneObject[];
+    onRemovePlanes: (id:number) => void;
 }

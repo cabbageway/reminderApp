@@ -3,7 +3,9 @@ interface IString {
     text: string,
     text2:string
 }
-function TestComponent({text}:IString, {text2}:IString) {
+// zwei Schreibweisen
+//function TestComponent({text}:IString, {text2}:IString) {
+function TestComponent({text, text2}:IString) {
     return (
         <div>
             <hr />

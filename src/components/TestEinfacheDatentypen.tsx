@@ -1,23 +1,31 @@
 import React from 'react';
 
-interface IProps {
-    name: string,
-    nr : number
-}
+
 /* Inline Definition */
-function TestEinfacheDatentypen2(test:{name:string, nr:number}) {
+function TestEinfacheDatentypen(test:{name:string, nr:number}) {
     return (
         <div>
-           {test.name} {test.nr} 
+             <hr />
+            <p>Ausgabe aus Komponente einfache Datentypen <br />
+           {test.name} {test.nr} </p>
+         
         </div>
     );
 }
 
+interface IProps {
+    name: string,
+    nr : number
+}
+
 /* Datentyp mit Interface */
-function TestEinfacheDatentypen(test:IProps){
+function TestEinfacheDatentypen2(test:IProps){
     return (
+
         <div>
-           {test.name} {test.nr} 
+            <hr />
+            <p>Ausgabe aus Komponente einfache Datentypen <br />
+           {test.name} {test.nr} </p>
         </div>
     );
 }

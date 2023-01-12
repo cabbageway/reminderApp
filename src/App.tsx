@@ -4,7 +4,7 @@ import './App.css';
 import ReminderList from './components/ReminderList';
 import TestComponent from './components/testComponent';
 import TestEinfacheDatentypen from './components/TestEinfacheDatentypen';
-import { Reminder, IString, PlaneList } from './models/Reminder';
+import { Reminder, IString, PlaneList, PlaneObject } from './models/Reminder';
 import ReminderService from './services/reminder';
 import Badge from './components/Badge';
 import BadgeFunctional from './components/BadgeFunctional';
@@ -22,10 +22,12 @@ const remindersStatic: Reminder[] = [
   {id:2, title: 'React lernen'}
 ]; 
 
-/*const planesStatic:PlaneList = [{
+
+
+const planesStatic: PlaneObject[] = [{
   id:1, start:23, end:7},
   {id:1, start:23, end:7}
-]; */
+]; 
 
 // Variablendefinition
 const zahl:number=5;
@@ -85,25 +87,31 @@ function App() {
     alert("die wird generiert");
   }
 
+  const removePlanes = () => {
+    alert("plane gelöscht");
+  }
+
   return (
     
     <div className="App">
-      <p>Ausgabe von Daten innerhalb der Komponente </p>
-      <p>Ausgabe von Variablen der Komponente z.B. Zahl: {zahl} </p>
-      <p>Ausgabe von Objekten der Komponente z.B. Reminder: {remindersStatic[0].title} </p>
+      <p>Ausgabe von Daten innerhalb der App Komponente </p>
+      <p>Ausgabe von Variablen der APP Komponente z.B. Zahl: {zahl} </p>
+      <p>Ausgabe von Objekten der APP Komponente z.B. Reminder: {remindersStatic[0].title} </p>
 
+      <TestEinfacheDatentypen name={name} nr={zahl}></TestEinfacheDatentypen>
+      
       <TestComponent text={testString.text} text2={testString.text2}></TestComponent>
       
-      <button className="btn btn-primary" onClick={lokalFunki}>Click me</button>
+      <button className="btn btn-primary" onClick={lokalFunki}>Click me (App)</button>
 
       <hr />
 
-    
+      <Map planes={planesStatic} onRemovePlanes={removePlanes}></Map>
 
       <Button></Button>
       <CounterWidth></CounterWidth>
     
-      <Badge></Badge>
+      <Badge ></Badge>
     
       <BadgeFunctional text={testString.text} text2={testString.text2}></BadgeFunctional>
       <TestEinfacheDatentypen name={name} nr={zahl}></TestEinfacheDatentypen>
