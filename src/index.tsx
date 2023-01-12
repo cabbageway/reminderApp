@@ -4,10 +4,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Teacher } from './Teacher';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const teacher = new Teacher("Franz", "Prof.");
+teacher.teach();
+teacher.walk();
+
 root.render(
   <React.StrictMode>
     <App />

@@ -26,8 +26,9 @@ function ReminderList({items, onRemoveReminder} : ReminderListProps)  {
     <ul className='list-group'>
         {items.map(item => 
              <li key={item.id}><span className='badge bg-secondary'>
-                {item.title}
-                </span><button onClick={() =>onRemoveReminder(item.id)} className='btn btn-outline-danger mx-2 rounded-pill'>Delete</button></li>) }
+                {item.id} {item.title} 
+                </span>
+        <button onClick={() =>onRemoveReminder(item.id)} className='btn btn-outline-danger mx-2 rounded-pill'>Delete</button></li>) }
     </ul>
     </div>
     

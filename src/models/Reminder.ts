@@ -1,4 +1,5 @@
-
+// Hier liegen alle Interfaces vor 
+// im Interface werden die Attribute und Methoden der Komponenten definiert
 
 export interface Reminder {
     id: number;
@@ -13,4 +14,14 @@ export interface ReminderListProps {
 export interface IString {
     text: string,
     text2:string
+}
+
+export interface PlaneObject {
+    id:number;
+    start: number;
+    end: number;
+}
+
+export interface PlaneList {
+    planes:PlaneObject[];
 }
