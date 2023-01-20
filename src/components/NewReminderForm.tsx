@@ -23,6 +23,7 @@ function NewReminderForm({onAddReminder} : NewReminderProps) {
             <input placeholder={title} type ="text" 
             onChange={e => setTitle(e.target.value)}/> 
             <button type="submit" onClick={() =>onAddReminder(title)}  >add</button>
+            <hr />
             </form>
         </div>
     );

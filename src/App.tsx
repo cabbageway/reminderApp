@@ -31,7 +31,7 @@ const planesStatic: PlaneObject[] = [{
 
 // Variablendefinition
 const zahl:number=5;
-const name:string="meinName";
+const name:string="Christoph";
 
 /* interface IProps {
   name: string,
@@ -130,6 +130,7 @@ useState<IString>({text: "chris",text2:"gg"})
       <ReminderList  items={remindersStatic} onRemoveReminder={removeReminders}  />
 
       <NewReminderForm onAddReminder={addReminder}/>
+      
       <ReminderList  items={reminders} onRemoveReminder={removeReminders}  />
       
       <ClassComponent></ClassComponent> 
