@@ -5,9 +5,9 @@ import React from 'react';
 function TestEinfacheDatentypen(test:{name:string, nr:number}) {
 
     return (
-        <div>
+        <div className='testEinfacheDatentypen'>
              <hr />
-            <p>Ausgabe aus Komponente einfache Datentypen <br />
+            <p>Übergabe von Daten an Komponente "TesteinfacheDatentypen" <br />
            {test.name} {test.nr}  </p>
          
         </div>

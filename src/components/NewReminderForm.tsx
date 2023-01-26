@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { ReminderListProps } from '../models/Reminder';
+import { ReminderListProps, NewReminderProps } from '../models/Reminder';
 
-interface NewReminderProps {
-    onAddReminder: (title:string) => void;
-}
+
 
 function NewReminderForm({onAddReminder} : NewReminderProps) {
     let [title, setTitle] = useState("Text einfügen");

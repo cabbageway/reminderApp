@@ -14,6 +14,8 @@ import Counters from './components/Counters';
 import NewReminderForm from './components/NewReminderForm';
 import ClassComponent from './components/ClassComponent';
 import Map from './components/Map';
+import Einkaufsliste from './components/Einkaufliste';
+import { text } from 'stream/consumers';
 
 
 // Array von Reminderobjekten
@@ -47,20 +49,26 @@ let params:IProps = {name:"chris", nr:44};
 function App() {
 
   // state hook 
+let number = 5;
 
-  const [testString, setTestString] = 
+const [obst,setObst] = useState(0);
+const [testString, setTestString] = 
 useState<IString>({text: "chris",text2:"gg"})
   
   const [reminders, setReminders] = 
     useState<Reminder[]>([
     //{id:1,title: 'Reminder 1'}
   ]);  
+
   
   //effect hook
   useEffect(()=> {
     loadReminders();
   },[]);
   
+  /* useEffect(()=> {
+    changeNumber(obst);
+  }); */
 
   // holen des Reminder Service um über die API 
   // Daten zu holen
@@ -97,33 +105,45 @@ useState<IString>({text: "chris",text2:"gg"})
   }
 
   const changeText = () => {
-      setTestString({text: "franz",text2:"lola"});
+      
   }
-
+  
+  const changeNumber = (num:number) => {
+    console.log("aus Elternkomponente"+ num);
+    setObst(num);
+    num.toString();
+    
+}
+//  <TestEinfacheDatentypen name={name} nr={zahl} ></TestEinfacheDatentypen>
   return (
     
     <div className="App">
-      <p>Ausgabe von Daten innerhalb der App Komponente </p>
+      <p>Ausgabe von Daten innerhalb der App Komponente (oberste) </p>
       <p>Ausgabe von Variablen der APP Komponente z.B. Zahl: {zahl} </p>
       <p>Ausgabe von Objekten der APP Komponente z.B. Reminder: {remindersStatic[0].title} </p>
 
-      <TestEinfacheDatentypen name={name} nr={zahl} ></TestEinfacheDatentypen>
-      
-      <TestComponent text={testString.text} text2={testString.text2} ></TestComponent>
-      
-      <button className="btn btn-primary" onClick={lokalFunki}>Click me (App)</button>
+   <TestComponent></TestComponent>
+            <hr />
+
+      <Einkaufsliste onChangeNumber={changeNumber}></Einkaufsliste>
+     
+      <p>Warenkorb angezeigt in der App Komponente</p>
+      <label className='label'>Obst</label>
+      <h1 id="obst" className='btn'>{obst}</h1>
+      <label className='label'>Gemüse</label>
+      <h1 id="obst" className='btn'></h1>
 
       <hr />
-
-      <Map planes={planesStatic} onRemovePlanes={removePlanes}></Map>
+    	
+      <BadgeFunctional name="obst" nr={obst}  ></BadgeFunctional>
 
       <Button></Button>
       <CounterWidth></CounterWidth>
     
       <Badge ></Badge>
     
-      <BadgeFunctional text={testString.text} text2={testString.text2}></BadgeFunctional>
-      <TestEinfacheDatentypen name={name} nr={zahl}></TestEinfacheDatentypen>
+      
+      <TestEinfacheDatentypen name={name} nr={zahl} ></TestEinfacheDatentypen>
       
       
       

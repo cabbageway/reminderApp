@@ -1,13 +1,16 @@
 import React from 'react';
-import { Reminder, IString } from '../models/Reminder';
+
 
 /* mit rsf einleiten */
 
 
-function BadgeFunctional(text:IString) {
+function BadgeFunctional(test:{name:string, nr:number}) {
     return (
+        
         <div>
-            <h1>my name ist Emma {text.text} </h1>
+            <p>Ausgabe aus der KomponenteBadgeFunctional</p>
+            <h1>{test.name} is {test.nr} </h1>
+            <hr/>
         </div>
     );
 }
