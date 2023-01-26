@@ -4,6 +4,12 @@
 export interface Reminder {
     id: number;
     title: string;
+   
+}
+
+
+export interface NewReminderProps {
+    onAddReminder: (title:string) => void;
 }
 
 export interface ReminderListProps {
@@ -13,8 +19,8 @@ export interface ReminderListProps {
 }
 export interface IString {
     text: string,
-    text2:string
-    
+    text2:string;
+   
 }
 
 export interface PlaneObject {
@@ -28,6 +34,6 @@ export interface PlaneList {
     onRemovePlanes: (id:number) => void;
 }
 
-export interface TestFunktions {
-    onChangeText: () => void; 
+export interface ITest {
+    onChangeNumber:(value:number) => void; 
 }
